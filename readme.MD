@@ -3,25 +3,23 @@
 ## Usages
 
 ```javascript
-import useEventBus from 'event-bus-reacts';
+import useEventBus from "event-bus-react";
 
 const App = () => {
-    const {subscribe} = useEventBus('MyEvent')
+  const { subscribe } = useEventBus("MyEvent");
 
-    subscribe('alert',(data) => {
-        console.log(data)
-    })
+  subscribe("alert", (data) => {
+    console.log(data);
+  });
 
+  const handleEmitEvent = () => {
+    MyEvent.emit("alert", { sayHello: "hello" });
+  };
 
-    const handleEmitEvent = () => {
-        MyEvent.emit('alert',{sayHello : "hello"})
-    }
-
-return (
-        <>
-            <button onClick={handleEmitEvent}>Emit Event</button>
-        </>    
-    )
-}
+  return (
+    <>
+      <button onClick={handleEmitEvent}>Emit Event</button>
+    </>
+  );
+};
 ```
-
