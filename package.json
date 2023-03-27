@@ -1,9 +1,9 @@
 {
   "name": "event-bus-react",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "type": "module",
   "description": "This hook can carry events across the app.",
-  "main": "/dist/react-event-bus.js",
+  "main": "index.js",
   "repository": {
     "type" : "git",
     "url" : "https://github.com/mg-kh/event-bus-react.git"
