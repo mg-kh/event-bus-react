@@ -6,7 +6,7 @@
   "main": "/dist/react-event-bus.js",
   "repository": {
     "type" : "git",
-    "url" : "https://github.com/mg-kh/react-custom-hooks.git"
+    "url" : "https://github.com/mg-kh/event-bus-react.git"
   },
   "scripts": {
     "build": "microbundle -o dist/ --sourcemap false",
