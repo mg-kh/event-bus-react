@@ -1,0 +1,33 @@
+{
+  "name": "event-bus-react",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "This hook can carry events across the app.",
+  "main": "/dist/react-event-bus.js",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/mg-kh/react-custom-hooks.git"
+  },
+  "scripts": {
+    "build": "microbundle -o dist/ --sourcemap false",
+    "dev": "microbundle watch -o dist/ --sourcemap false --compress false"
+  },
+  "keywords": [
+    "react",
+    "hooks",
+    "custom hooks",
+    "utility",
+    "event"
+  ],
+  "author": "Kaung Htet Lynn",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/preset-react": "^7.18.6",
+    "microbundle": "^0.15.1"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  }
+}
