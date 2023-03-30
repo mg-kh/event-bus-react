@@ -1,9 +1,10 @@
 {
   "name": "event-bus-react",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "sideEffects": false,
   "description": "This hook can carry events across the app.",
-  "main": "dist/event-bus-react.js",
+  "type" : "module",
+  "main": "dist/event-bus-react.mjs",
   "umd:main" : "dist/event-bus-react.umd.js",
   "module" : "dist/event-bus-react.mjs",
   "source": "index.js",
