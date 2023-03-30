@@ -4,7 +4,7 @@ const useEventBus = (eventName = "EventBus") => {
   const events = {};
 
   const on = (event, callback) => {
-    !events[event] ? (events[event] = callback) : false;
+    !events[event] ? (events[event] = callback) : events[event];
   };
 
   const emit = (event, data) => {
