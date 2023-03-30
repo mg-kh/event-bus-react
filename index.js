@@ -20,7 +20,7 @@ const useEventBus = (eventName = "EventBus") => {
     if (window !== "undefined") {
       window[eventName] = { emit };
     }
-  }, []);
+  }, [events]);
 
   return { subscribe };
 };

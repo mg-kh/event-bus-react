@@ -6,7 +6,7 @@
 import useEventBus from "event-bus-react";
 
 const App = () => {
-  const { subscribe } = useEventBus("MyEvent");
+  const { subscribe } = useEventBus("MyEvent"); // default EventBus
 
   subscribe("alert", (data) => {
     console.log(data);
