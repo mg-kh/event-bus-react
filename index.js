@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect } from "react";
+import { useEffect } from "react";
 
 const events = {};
 
@@ -15,7 +15,7 @@ const useEventBus = (eventName = "EventBus") => {
     }
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (window !== "undefined") {
       window[eventName] = { emit };
     }
