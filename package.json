@@ -1,6 +1,6 @@
 {
   "name": "event-bus-react",
-  "version": "0.0.7",
+  "version": "1.0.0",
   "sideEffects": false,
   "description": "This hook can carry events across the app.",
   "type" : "module",
