@@ -1,28 +1,35 @@
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
+
+const events = {};
+
+const on = (event, callback) => {
+  !events[event] ? (events[event] = callback) : false;
+};
 
 const useEventBus = (eventName = "EventBus") => {
-  const events = {};
-
-  const on = (event, callback) => {
-    !events[event] ? (events[event] = callback) : events[event];
-  };
-
   const emit = (event, data) => {
-    if (!events[event]) return;
-    events[event](data);
+    if (!events[event]) {
+      throw new Error(`Subscriber name '${event}' not found!`);
+    } else {
+      events[event](data);
+    }
   };
 
-  const subscribe = (event, callback) => {
-    on(event, callback);
-  };
-
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (window !== "undefined") {
       window[eventName] = { emit };
     }
-  }, [events]);
+  }, []);
+};
 
-  return { subscribe };
+export const subscribe = (event, callback, deps = []) => {
+  useEffect(() => {
+    on(event, callback);
+
+    return () => {
+      delete events[event];
+    };
+  }, [...deps]);
 };
 
 export default useEventBus;
